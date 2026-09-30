@@ -54,3 +54,18 @@ input::placeholder { color: var(--muted); }
 .pri-low { background: var(--lowbg); color: var(--lowfg); }
 .pri-medium { background: var(--medbg); color: var(--medfg); }
 .pri-high { background: var(--highbg); color: var(--highfg); }
+
+.due-overdue { background: var(--highbg); color: var(--highfg); }
+.due-today { background: var(--medbg); color: var(--medfg); }
+.due-upcoming { background: var(--line); color: var(--muted); }
+
+.field {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  outline: none;
+  color: var(--text);
+  color-scheme: light dark;
+}
+.field:focus { border-color: var(--accent); }

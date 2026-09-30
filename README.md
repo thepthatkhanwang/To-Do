@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Thai Todo (Vite + React + Tailwind)
 
 แอปรายการสิ่งที่ต้องทำ ภาษาไทย — React 18, Vite 5, Tailwind CSS 3, lucide-react
@@ -12,3 +13,6 @@ npm run preview  # ทดลองเปิดไฟล์ที่ build แล
 ```
 
 ข้อมูลเก็บใน React state เท่านั้น (รีเฟรชแล้วรีเซ็ต) ไม่ใช้ localStorage
+=======
+# To-Do
+>>>>>>> d4d36b64eecf93a872d2635e1514226393cbf7ed
