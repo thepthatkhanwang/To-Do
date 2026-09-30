@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #f4f5f7; --card: #fff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --accent: #4f46e5;
+  --lowbg: #dcfce7; --lowfg: #166534; --medbg: #fef3c7; --medfg: #92400e; --highbg: #fee2e2; --highfg: #991b1b;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111318; --card: #1c1f27; --text: #f3f4f6; --muted: #9ca3af; --line: #2d313b; --accent: #818cf8;
+    --lowbg: #14532d; --lowfg: #bbf7d0; --medbg: #78350f; --medfg: #fde68a; --highbg: #7f1d1d; --highfg: #fecaca;
+    --shadow: 0 1px 3px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111318; --card: #1c1f27; --text: #f3f4f6; --muted: #9ca3af; --line: #2d313b; --accent: #818cf8;
+  --lowbg: #14532d; --lowfg: #bbf7d0; --medbg: #78350f; --medfg: #fde68a; --highbg: #7f1d1d; --highfg: #fecaca;
+  --shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans Thai', system-ui, -apple-system, 'Sarabun', sans-serif;
+}
+input, button { font-family: inherit; color: inherit; }
+input::placeholder { color: var(--muted); }
+
+.card { background: var(--card); box-shadow: var(--shadow); border-radius: 14px; }
+
+.item {
+  transition: opacity .25s ease, transform .25s ease, max-height .25s ease, margin .25s ease, padding .25s ease;
+  max-height: 120px;
+  overflow: hidden;
+}
+.item.leaving {
+  opacity: 0;
+  transform: translateX(24px);
+  max-height: 0;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+@keyframes pop { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.item.enter { animation: pop .25s ease; }
+
+.pri-low { background: var(--lowbg); color: var(--lowfg); }
+.pri-medium { background: var(--medbg); color: var(--medfg); }
+.pri-high { background: var(--highbg); color: var(--highfg); }
